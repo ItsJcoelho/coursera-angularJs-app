@@ -1,11 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="myFirstApp">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coursera - AngularJs</title>
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
 </head>
 <body>
-    <h1>Hello - Coursera - Hello</h1>
+    <div>
+       <h1>My first Angular app</h1>
+        <div ng-controller="MyFirstController">
+            <input type="text" ng-model="name">
+            Inside my Input is: {{ name }}
+        </div>
+    </div>
+    
+
+    <div ng-controller="NameCalculatorController">
+        <h1>Name Calculator</h1>
+        <div>
+            <div>
+                Your Name:
+                <input type="text" ng-model="name" ng-keyup="displayNumeric();">
+            </div>
+            <div>Total Numeric value of person's name is: {{totalValue}}</div>
+        </div>
+    </div>
+    
+    <div ng-controller='DIController'>
+      <h1>Dependency Injection in Javascript (and AngularJS)</h1>
+      <input type="text" ng-model="name" ng-blur="upper();">
+    </div>
+
+    <div ng-controller='MsgController'>
+        <h1>Expressions and Interpolation</h1>
+        <div>
+        {{name}} has a message for you: <br>
+        {{sayMessage()}}
+        <div>
+            <button ng-click="rest()">Rest Jorge</button>
+            <br>
+
+            <img ng-src="images/{{stateOfBeing}}.png">
+        </div>
+        </div>
+    </div>
+
+
+    
 </body>
 </html>
